@@ -3,11 +3,9 @@ import java.util.Scanner;
 public class Player{
     private int[] coord1;
     private int playerno;
-    Player(int number){
-        this.playerno = number;
-    }
 
-    public void pieceselect(){
+
+    public void pieceselect(int playerno){
         Scanner input = new Scanner(System.in);
         System.out.println("Player " + playerno + "'s turn");
         System.out.println("Coordinate of piece to move");
@@ -21,4 +19,8 @@ public class Player{
         return coord1;
     }
 
-}
+    public void moveinit(int[][] b, int[] coord1, int[] coord2){
+        b[coord2[0]][coord2[1]]=b[coord1[0]][coord1[1]];
+        b[coord1[0]][coord1[1]] = 0;
+
+}}

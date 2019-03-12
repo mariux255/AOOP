@@ -21,4 +21,9 @@ public class Player{
         return coord1;
     }
 
+    public void moveinit(int[][] b, int[] coord1, int[] coord2){
+    b[coord2[0]][coord2[1]]=b[coord1[0]][coord1[1]];
+        b[coord1[0]][coord1[1]] = 0;
+    }
+
 }

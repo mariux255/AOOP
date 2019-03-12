@@ -1,15 +1,15 @@
 public class Checkers {
     public static void main(String[] args){
-        Coordination c = new Coordination();
+        CoordinationInterface c = new Coordination();
         int coordinatey1;
         int[] coordinates;
         int Player=0;
         int[][] board=c.initialize();
         while (true) {
             Player = ((Player%2 == 0) ? 1 : 2);
-            Board b = new Board();
+            BoardInterface b = new Board();
             b.Status(board);
-            Player p = new Player();
+            PlayerInterface p = new Player();
             while (true){
                 p.pieceselect(Player);
                 coordinates= p.getpieceselect();
@@ -27,12 +27,13 @@ public class Checkers {
                 int[] coordinates2=p.getpieceselect();
                 int coordinatex2=coordinates2[0];
                 int coordinatey2=coordinates2[1];
-                Piece pi = new Piece();
+                PieceInterface pi = new Piece();
                 if(pi.piecemove(coordinatey1,coordinatey2,c.PieceValue(coordinatex2,coordinatey2),Player)){
                     p.moveinit(board,coordinates, coordinates2);
                     break;
                 }
             }
+            Player=Player+1;
         }
     }
 }

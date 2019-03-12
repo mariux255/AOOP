@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Player{
+public class Player implements PlayerInterface{
     private int[] coord1;
     private int playerno;
 
